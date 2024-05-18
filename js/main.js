@@ -1,57 +1,113 @@
-// smooth-scroll
-$.smoothScroll({
-    //滑动到的位置的偏移量
-    offset: 0,
-    //滑动的方向，可取 'top' 或 'left'
-    direction: 'top',
-    // 只有当你想重写默认行为的时候才会用到
-    scrollTarget: null,
-    // 滑动开始前的回调函数。`this` 代表正在被滚动的元素
-    beforeScroll: function () { },
-    //滑动完成后的回调函数。 `this` 代表触发滑动的元素
-    afterScroll: function () { },
-    //缓动效果
-    easing: 'swing',
-    //滑动的速度
-    speed: 700,
-    // "自动" 加速的系数
-    autoCoefficent: 2
-});
-
-
-// Bind the hashchange event listener
-$(window).bind('hashchange', function (event) {
-    $.smoothScroll({
-        // Replace '#/' with '#' to go to the correct target
-        offset: $("body").attr("data-offset")? -$("body").attr("data-offset"):0 ,
-        // offset: -30,
-        scrollTarget: decodeURI(location.hash.replace(/^\#\/?/, '#'))
-        
-      });
-});
-
-// $(".smooth-scroll").on('click', "a", function() {
-$('a[href*="#"]')
-    .bind('click', function (event) {    
-    // Remove '#' from the hash.
-    var hash = this.hash.replace(/^#/, '')
-    if (this.pathname === location.pathname && hash) {
-        event.preventDefault();
-        // Change '#' (removed above) to '#/' so it doesn't jump without the smooth scrolling
-        location.hash = '#/' + hash;
-    }
-});
-
-// Trigger hashchange event on page load if there is a hash in the URL.
-if (location.hash) {
-    $(window).trigger('hashchange');
+/**
+ * Sets up Justified Gallery.
+ */
+if (!!$.prototype.justifiedGallery) {
+  var options = {
+    rowHeight: 140,
+    margins: 4,
+    lastRow: "justify"
+  };
+  $(".article-gallery").justifiedGallery(options);
 }
 
-// // $('[data-spy="scroll"]').each(function () {
-// //     var $spy = $(this).scrollspy('refresh')
-// //   })
+$(document).ready(function() {
 
-// $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
-//     // do something…
-//     var offset = $('[data-spy="scroll"]').attr("data-offset")
-//   })
+  /**
+   * Shows the responsive navigation menu on mobile.
+   */
+  $("#header > #nav > ul > .icon").click(function() {
+    $("#header > #nav > ul").toggleClass("responsive");
+  });
+
+
+  /**
+   * Controls the different versions of  the menu in blog post articles 
+   * for Desktop, tablet and mobile.
+   */
+  if ($(".post").length) {
+    var menu = $("#menu");
+    var nav = $("#menu > #nav");
+    var menuIcon = $("#menu-icon, #menu-icon-tablet");
+
+    /**
+     * Display the menu on hi-res laptops and desktops.
+     */
+    if ($(document).width() >= 1440) {
+      menu.css("visibility", "visible");
+      menuIcon.addClass("active");
+    }
+
+    /**
+     * Display the menu if the menu icon is clicked.
+     */
+    menuIcon.click(function() {
+      if (menu.css("visibility") === "hidden") {
+        menu.css("visibility", "visible");
+        menuIcon.addClass("active");
+      } else {
+        menu.css("visibility", "hidden");
+        menuIcon.removeClass("active");
+      }
+      return false;
+    });
+
+    /**
+     * Add a scroll listener to the menu to hide/show the navigation links.
+     */
+    if (menu.length) {
+      $(window).on("scroll", function() {
+        var topDistance = menu.offset().top;
+
+        // hide only the navigation links on desktop
+        if (!nav.is(":visible") && topDistance < 50) {
+          nav.show();
+        } else if (nav.is(":visible") && topDistance > 100) {
+          nav.hide();
+        }
+
+        // on tablet, hide the navigation icon as well and show a "scroll to top
+        // icon" instead
+        if ( ! $( "#menu-icon" ).is(":visible") && topDistance < 50 ) {
+          $("#menu-icon-tablet").show();
+          $("#top-icon-tablet").hide();
+        } else if (! $( "#menu-icon" ).is(":visible") && topDistance > 100) {
+          $("#menu-icon-tablet").hide();
+          $("#top-icon-tablet").show();
+        }
+      });
+    }
+
+    /**
+     * Show mobile navigation menu after scrolling upwards,
+     * hide it again after scrolling downwards.
+     */
+    if ($( "#footer-post").length) {
+      var lastScrollTop = 0;
+      $(window).on("scroll", function() {
+        var topDistance = $(window).scrollTop();
+
+        if (topDistance > lastScrollTop){
+          // downscroll -> show menu
+          $("#footer-post").hide();
+        } else {
+          // upscroll -> hide menu
+          $("#footer-post").show();
+        }
+        lastScrollTop = topDistance;
+
+        // close all submenu"s on scroll
+        $("#nav-footer").hide();
+        $("#toc-footer").hide();
+        $("#share-footer").hide();
+
+        // show a "navigation" icon when close to the top of the page, 
+        // otherwise show a "scroll to the top" icon
+        if (topDistance < 50) {
+          $("#actions-footer > #top").hide();
+        } else if (topDistance > 100) {
+          $("#actions-footer > #top").show();
+        }
+      });
+    }
+  }
+});
