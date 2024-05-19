@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Peter Blum</title>
-    <link>https://oskoss.github.io/tags/</link>
+    <link>https://oskoss.com/tags/</link>
     <description>Recent content in Tags on Peter Blum</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate>
-    <atom:link href="https://oskoss.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oskoss.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>https://oskoss.github.io/tags/test/</link>
+      <link>https://oskoss.com/tags/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/test/</guid>
+      <guid>https://oskoss.com/tags/test/</guid>
       <description></description>
     </item>
     <item>
       <title>Algorithms</title>
-      <link>https://oskoss.github.io/tags/algorithms/</link>
+      <link>https://oskoss.com/tags/algorithms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/algorithms/</guid>
+      <guid>https://oskoss.com/tags/algorithms/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming Language</title>
-      <link>https://oskoss.github.io/tags/programming-language/</link>
+      <link>https://oskoss.com/tags/programming-language/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/programming-language/</guid>
+      <guid>https://oskoss.com/tags/programming-language/</guid>
       <description></description>
     </item>
     <item>
       <title>Racket</title>
-      <link>https://oskoss.github.io/tags/racket/</link>
+      <link>https://oskoss.com/tags/racket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/racket/</guid>
+      <guid>https://oskoss.com/tags/racket/</guid>
       <description></description>
     </item>
     <item>
       <title>SML</title>
-      <link>https://oskoss.github.io/tags/sml/</link>
+      <link>https://oskoss.com/tags/sml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/sml/</guid>
+      <guid>https://oskoss.com/tags/sml/</guid>
       <description></description>
     </item>
     <item>
       <title>RPA</title>
-      <link>https://oskoss.github.io/tags/rpa/</link>
+      <link>https://oskoss.com/tags/rpa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/rpa/</guid>
+      <guid>https://oskoss.com/tags/rpa/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>https://oskoss.github.io/tags/javascript/</link>
+      <link>https://oskoss.com/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/javascript/</guid>
+      <guid>https://oskoss.com/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Vue.js</title>
-      <link>https://oskoss.github.io/tags/vue.js/</link>
+      <link>https://oskoss.com/tags/vue.js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/vue.js/</guid>
+      <guid>https://oskoss.com/tags/vue.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Php</title>
-      <link>https://oskoss.github.io/tags/php/</link>
+      <link>https://oskoss.com/tags/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/php/</guid>
+      <guid>https://oskoss.com/tags/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Ruby</title>
-      <link>https://oskoss.github.io/tags/ruby/</link>
+      <link>https://oskoss.com/tags/ruby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/ruby/</guid>
+      <guid>https://oskoss.com/tags/ruby/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://oskoss.github.io/tags/linux/</link>
+      <link>https://oskoss.com/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://oskoss.github.io/tags/linux/</guid>
+      <guid>https://oskoss.com/tags/linux/</guid>
       <description></description>
     </item>
   </channel>
